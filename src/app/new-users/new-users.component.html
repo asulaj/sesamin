@@ -1,0 +1,19 @@
+<div class="d-flex justify-center align-center">
+  <div class="card m-2" style="width: 18rem;">
+
+    <div class="card-body">
+      <form #b="ngForm" (ngSubmit)="toParent(b);close.emit()">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" ngModel>
+        <label for="mail">Mail</label>
+        <input type="text" name="mail" id="mail" ngModel>
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" ngModel>
+        <button type="button" class="btn btn-danger m-1" (click)="close.emit()">Delete</button>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+
+
+    </div>
+  </div>
+</div>

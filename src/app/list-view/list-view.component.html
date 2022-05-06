@@ -1,0 +1,27 @@
+<div class="card-deck d-flex flex-column">
+    <div class="title d-flex justify-content-between">
+        <span></span>
+        <span>Name</span>
+        <span>Mail</span>
+        <span>Address</span>
+        <span>Orders:#</span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+        <div class="card" *ngFor="let user of users">
+            
+            <div class="card-body d-flex flex-row justify-content-between">
+                <img [src]="user.imageUrl" class="rounded-circle" alt="">
+                <p>{{user.name}}</p>
+                <p>{{user.mail}}</p>
+                <p>{{user.location.address}}</p>
+                <p>{{user.orders.length}}</p>
+                <a href="#" (click)="orderShow.emit()">View orders</a>
+                <a href="#" class="btn btn-primary" >Edit</a>
+                <button type="button" class="btn btn-danger m-1" (click)="delete(user)">Delete</button>
+            </div>
+
+        </div>
+    
+</div>

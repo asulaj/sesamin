@@ -1,0 +1,13 @@
+<div class="container-fluid mt-2" >
+  <h1 class="m-2">Users</h1>
+    <button type="button" class="btn btn-light m-2" (click)="showCard = !showCard;showList = false; showNew = false;">Card view</button>
+    <button type="button" class="btn btn-light m-2" (click)="showList = !showList; showCard = false; showNew = false;">List view</button>
+    <button type="button" class="btn btn-light m-2" (click)="showNew = !showNew; showCard = false; showList = false;">add new user</button>
+  <app-card-view *ngIf="showCard" [users]="users" (orderShow)="showOrder = !showOrder" (deleter)="delete($event)"></app-card-view>
+  <app-list-view *ngIf="showList" [users]="users" (orderShow)="showOrder = !showOrder" (deleter)="delete($event)"></app-list-view>
+  <app-new-users *ngIf="showNew" (close)="showNew=false;showCard=true" (submitParent)="addUsers($event)"></app-new-users>
+  <div *ngIf="showOrder">
+    <app-orders *ngFor="let user of users" [users]="user" ></app-orders>
+  </div>
+</div>
+

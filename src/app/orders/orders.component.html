@@ -1,0 +1,18 @@
+<div class="overlay"></div>
+<div class="container d-flex justify-content-center">
+    <div class="a">
+        <h4>Orders</h4>
+        <div class="d-flex justify-content-around">
+            <p>Product</p>
+            <p>Date</p>
+            <p>Quantity</p>
+            <p style="float: right;">Total</p>
+        </div>
+        <div class="card-body d-flex flex-row justify-content-between" *ngFor="let order of users.orders">
+            <p>{{order.product.name}}</p>
+            <p>{{order.product.price}}</p>
+            <p>{{order.quantity}}</p>   
+            <p>{{order.product.price}}</p>   
+        </div>
+    </div>
+</div>
